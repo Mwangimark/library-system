@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>library home</title>
+</head>
+<body>
+       <h1> My library</h1>
+
+      <div class="all_books">
+        {% if all_books==[]%}
+           <p>There are no books</p>
+        {%else%}
+           <ul>
+            {%for book in all_books%}
+                <li>{{book.title}}-{{book.author}}-{{book.rating}}/10</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+    </div>
+
+ <a href="{{url_for('add_book')}}">Add book</a>
+</body>
+</html>
